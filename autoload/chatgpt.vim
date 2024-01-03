@@ -328,6 +328,7 @@ augroup chatgptWipeBuf
     autocmd SessionLoadPost * :call chatgpt#wipeBuf()
 augroup END
 
+call chatgpt#AddSourceConfig([expand("<sfile>:p:h") . "/perplexity.py",  "mistral-7b-instruct"])
 call chatgpt#AddSourceConfig([expand("<sfile>:p:h") . "/chatgpt.py",  "gpt-3.5-turbo"])
 call chatgpt#AddSourceConfig([expand("<sfile>:p:h") . "/qianfan.py",  "ErnieBot"])
 call chatgpt#AddSourceConfig([expand("<sfile>:p:h") . "/qianfan.py",  "ErnieBot-turbo"])
