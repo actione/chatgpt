@@ -2,6 +2,7 @@
 import os
 import argparse
 import json
+from chatcore import load_session, save_session
 try:
     import openai
 except Exception as e:
@@ -15,7 +16,7 @@ def chat(model, content, session):
     msgs = load_session(session)
     msgs.append(msg)
     try:
-        response_msg = openai.ChatCompletion.create(model=model, messages=msgs, api_base="https://api.perplexity.ai", stop=r'@@@').choices[0].message
+        response_msg = openai.ChatCompletion.create(model=model, messages=msgs, api_base="https://api.perplexity.ai").choices[0].message
     except Exception as e:
         return e
     msgs.append(response_msg)

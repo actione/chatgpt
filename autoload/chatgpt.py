@@ -2,6 +2,7 @@
 import os
 import argparse
 import json
+from chatcore import load_session, save_session
 try:
     import openai
 except Exception as e:
