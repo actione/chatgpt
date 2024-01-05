@@ -9,9 +9,11 @@ except Exception as e:
     os.system("pip3 install --user openai")
     import openai
 
-
 def chat(model, content, session):
-    openai.api_key = os.environ["PERPLEXITY_API_KEY"]
+    if "PERPLEXITY_API_KEY" in os.environ.keys():
+        openai.api_key = os.environ.get("PERPLEXITY_API_KEY")
+    else:
+        return "ERROR: please set environment variable PERPLEXITY_API_KEY!"
     msg = {"role": "user", "content": content}
     msgs = load_session(session)
     msgs.append(msg)
