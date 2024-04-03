@@ -6,7 +6,7 @@ function! chatgpt#AddSourceConfig(config)
     call add(g:chatgptSourceConfig, a:config)
 endfunction
 
-let g:chatgptConfigIndex = 0
+let g:chatgptConfigIndex = 1
 
 function! chatgpt#SetConfigIndex()
     let msg = ""
@@ -41,9 +41,9 @@ function! chatgpt#OpenWindow(addheader=1)
         if a:addheader == 1
             setlocal paste
             call append(line('$'), '- ChatGPT Vim Plugin')
-            call append(line('$'), '- SkyFire')
-            call append(line('$'), '- https://github.com/skyfireitdiy/chatgpt')
-            call append(line('$'), '- skyfireitdiy@hotmail.com')
+            " call append(line('$'), '- SkyFire')
+            " call append(line('$'), '- https://github.com/skyfireitdiy/chatgpt')
+            " call append(line('$'), '- skyfireitdiy@hotmail.com')
             if g:currentSession != ""
                 call append(line('$'), '- Session: ' . g:currentSession)
             endif
