@@ -6,7 +6,7 @@ function! chatgpt#AddSourceConfig(config)
     call add(g:chatgptSourceConfig, a:config)
 endfunction
 
-let g:chatgptConfigIndex = 1
+let g:chatgptConfigIndex = 0
 
 function! chatgpt#SetConfigIndex()
     let msg = ""
